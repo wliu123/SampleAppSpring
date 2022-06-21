@@ -14,12 +14,14 @@ public class StudentController{
     private StudentService studentService;
 
     @PostMapping("/add")
+    @CrossOrigin(origins = "http://localhost:3000")
     public String add(@RequestBody Student student) {
         studentService.saveStudent(student);
         return "New student has been created";
     }
 
     @GetMapping("/getAll")
+    @CrossOrigin(origins = "http://localhost:3000")
     public List<Student> getAllStudents() {
         return studentService.getAllStudents();
     }
